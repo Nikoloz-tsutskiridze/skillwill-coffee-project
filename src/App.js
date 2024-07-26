@@ -1,15 +1,12 @@
 import React from "react";
 import "./index.css";
-import logo from "./img/logo.png";
-import Espresso from "./img/Espresso.jpg";
-import Cappuccino from "./img/Cappuccino.jpg";
-import Latte from "./img/Latte.jpg";
 
 export default function App() {
   return (
     <div>
       <Header />
       <Menu />
+      <Cups />
       {/* <Footer /> */}
     </div>
   );
@@ -18,7 +15,7 @@ export default function App() {
 function Header() {
   return (
     <header className="header">
-      <img className="logo" src={logo} alt="logo" />
+      <img className="logo" src="./img/logo.png" alt="logo" />
       <nav>
         <ul className="nav-list">
           <li>
@@ -64,11 +61,15 @@ function Menu() {
         </div>
 
         <div className="step-img-box">
-          <img className="step-img" src={Espresso} alt="Espresso" />
+          <img className="step-img" src="./img/Espresso.jpg" alt="Espresso" />
         </div>
 
         <div className="step-img-box">
-          <img className="step-img" src={Cappuccino} alt="Cappuccino" />
+          <img
+            className="step-img"
+            src="./img/Cappuccino.jpg"
+            alt="Cappuccino"
+          />
         </div>
 
         <div>
@@ -94,9 +95,49 @@ function Menu() {
         </div>
 
         <div className="step-img-box">
-          <img className="step-img" src={Latte} alt="Latte" />
+          <img className="step-img" src="./img/Latte.jpg" alt="Latte" />
         </div>
       </div>
     </section>
+  );
+}
+
+function Cups() {
+  return (
+    <div className="cups-section">
+      <h1 className="heading-quaternary">Choose Your Coffee</h1>
+      <div class="coffee-container">
+        <div class="coffee-item">
+          <img src="./img/cup6.png" alt="Coffee 1" />
+          <h3>Espresso</h3>
+          <p>₾5.20</p>
+        </div>
+        <div class="coffee-item">
+          <img src="./img/cup3.jpg" alt="Coffee 2" />
+          <h3>Latte</h3>
+          <p>₾7.50</p>
+        </div>
+        <div class="coffee-item">
+          <img src="./img/cup4.jpg" alt="Coffee 3" />
+          <h3>Cappuccino</h3>
+          <p>₾6.00</p>
+        </div>
+        <div class="coffee-item">
+          <img src="./img/cup5.png" alt="Coffee 4" />
+          <h3>Americano</h3>
+          <p>₾5.30</p>
+        </div>
+        <div class="coffee-item">
+          <img src="./img/cup2.jpg" alt="Coffee 5" />
+          <h3>Mocha</h3>
+          <p>₾7.00</p>
+        </div>
+        <div class="coffee-item">
+          <img src="" alt="Coffee 6" />
+          <h3>Macchiato</h3>
+          <p>₾5.75</p>
+        </div>
+      </div>
+    </div>
   );
 }

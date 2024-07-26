@@ -164,3 +164,85 @@ body {
   background-color: #f5e3d2;
   z-index: -1;
 }
+
+.coffee-container {
+  display: grid;
+  gap: 0.5em;
+  grid-auto-flow: column;
+  grid-auto-columns: 25%;
+  padding: 0.5em;
+  overflow-x: scroll;
+  border-radius: 1em;
+  position: relative;
+}
+
+.coffee-container > div {
+  background: #ddd;
+  border-radius: 1em;
+  border: 0.5em solid #f5e3d2;
+  padding: 1em;
+}
+
+.coffee-container::-webkit-scrollbar {
+  width: 2em;
+  height: 1em;
+}
+
+.coffee-container::-webkit-scrollbar-track {
+  background: #f5e3d2;
+  border-radius: 100vw;
+  margin-block: 0.5em;
+}
+
+.coffee-container::-webkit-scrollbar-thumb {
+  background: #f6b27b;
+  border: 0.25em solid #f5e3d2;
+  border-radius: 100vw;
+}
+
+.coffee-container::-webkit-scrollbar-thumb:hover {
+  background: #d9823a;
+}
+
+/*  */
+
+.coffee-item {
+  display: inline-block;
+  width: 25rem;
+  margin-right: 0.2rem;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+.coffee-item img {
+  width: 15rem;
+  height: 15rem;
+  object-fit: cover;
+  border-radius: 50%;
+}
+.coffee-item h3 {
+  margin: 0.1rem 0 0.5rem;
+  font-size: 1.8rem;
+}
+.coffee-item p {
+  margin: 0;
+  font-size: 1.6rem;
+  color: #414141;
+}
+.heading-quaternary {
+  text-align: center;
+  font-size: 4.8rem;
+  margin-bottom: 3.2rem;
+  font-weight: bold;
+  color: #333;
+}
+
+.cups-section {
+  display: flex;
+  flex-direction: column;
+  padding: 9.6rem;
+}
