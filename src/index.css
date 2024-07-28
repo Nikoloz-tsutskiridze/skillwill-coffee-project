@@ -1,3 +1,4 @@
+
 * {
   margin: 0;
   padding: 0;
@@ -16,6 +17,9 @@ body {
 }
 
 .header {
+  position: sticky;
+  top: 0;
+  z-index: 999;
   background-color: #fdf2e9;
   display: flex;
   justify-content: space-between;
@@ -165,19 +169,19 @@ body {
   z-index: -1;
 }
 
+
 .coffee-container {
-  display: grid;
-  gap: 0.5em;
-  grid-auto-flow: column;
-  grid-auto-columns: 25%;
+  display: flex; 
+  gap: 1em; 
+  overflow-x: auto; 
+  overflow-y: hidden; 
   padding: 0.5em;
-  overflow-x: scroll;
   border-radius: 1em;
   position: relative;
 }
 
 .coffee-container > div {
-  background: #ddd;
+  background: linear-gradient(to right, skyblue , pink);
   border-radius: 1em;
   border: 0.5em solid #f5e3d2;
   padding: 1em;
@@ -207,6 +211,7 @@ body {
 /*  */
 
 .coffee-item {
+  flex: 0 0 auto;
   display: inline-block;
   width: 25rem;
   margin-right: 0.2rem;
@@ -245,4 +250,62 @@ body {
   display: flex;
   flex-direction: column;
   padding: 9.6rem;
+  padding-right: 0;
 }
+
+.footer {
+  width: 100%;
+}
+
+.footerClass {
+  background-color: #fdf2e9;
+  color: black;
+  text-align: center; 
+  padding: 30px 0; 
+  width: 100%;
+}
+
+.footerClass h3 {
+  font-size: 38px;
+  margin-bottom: 10px;
+  font-family: cursive;
+}
+
+.footerClass p {
+  font-size: 18px;
+  font-family: "Lato", sans-serif; 
+  padding: 20px 0; 
+}
+
+.socialMedias {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  padding: 0; 
+}
+
+.socialMedias li {
+  margin: 0 15px; 
+}
+
+.socialMedias a {
+  text-decoration: none;
+  color: white;
+}
+
+.socialMedias a i {
+  color: black;
+  font-size: 2rem;
+}
+
+.socialMedias a:hover i {
+  cursor: pointer;
+}
+
+.cont {
+  max-width: 1400px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+
