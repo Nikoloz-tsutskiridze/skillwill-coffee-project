@@ -181,7 +181,6 @@ body {
 }
 
 .coffee-container > div {
-  /* background: linear-gradient(to right, skyblue, pink); */
   background-color: #fff;
   border-radius: 1em;
   border: 0.5em solid #f5e3d2;
