@@ -11,7 +11,7 @@ function Header() {
   return (
     <header className="header">
       <img className="logo" src="./img/logo.png" alt="logo" />
-      <nav>
+      <nav className="header-link">
         <ul className="nav-list">
           <li>
             <a className="nav-link" href="Coffee">

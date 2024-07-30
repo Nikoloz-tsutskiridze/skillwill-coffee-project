@@ -1,15 +1,19 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
+
 import "./CoffeePage.css";
 import CoffeeCustomization from "../components/CoffeeCustomization";
 
 function CoffeePage() {
-  const [currency, setCurrency] = useState("USD");
+  const [currency, setCurrency] = useState("GEL");
   const [selectedCoffee, setSelectedCoffee] = useState(null);
   const [sugarAmount, setSugarAmount] = useState(0);
   const [totalPrice, setTotalPrice] = useState(0);
   const [selectedCoffees, setSelectedCoffees] = useState([]);
   const [showTotalValue, setShowTotalValue] = useState(false);
   const [showTitle, setShowTitle] = useState(true);
+
+  const navigate = useNavigate();
 
   const coffeeData = [
     {
@@ -101,6 +105,11 @@ function CoffeePage() {
     setShowTitle(false);
   };
 
+  const handleGoBack = () => {
+    handleClearAll();
+    navigate("/");
+  };
+
   return (
     <div className="coffee-page">
       <nav>
@@ -109,7 +118,7 @@ function CoffeePage() {
         </button>
       </nav>
       <menu>
-        <button>Add New</button>
+        <button onClick={handleGoBack}>Go Back</button>
         <button onClick={handleClearAll}>Clear All</button>
       </menu>
       <div className="coffee-container1">
@@ -136,6 +145,7 @@ function CoffeePage() {
               onClose={handleCloseCustomization}
               onConfirm={handleConfirm}
             />
+
             <div className="selected-coffee-display">
               <div className="center">
                 <img
@@ -148,11 +158,13 @@ function CoffeePage() {
             </div>
           </>
         )}
+
         {selectedCoffees.length > 0 && (
           <button className="total-value-button" onClick={handleShowTotalValue}>
-            Show Total Value
+            Your Order
           </button>
         )}
+
         {showTotalValue && (
           <div className="total-value-popup">
             <div className="total-value-content">
@@ -160,6 +172,13 @@ function CoffeePage() {
                 Total cost: {currency === "USD" ? "$" : "₾"}
                 {totalPrice.toFixed(2)}
               </p>
+              {selectedCoffees.map((coffee, index) => (
+                <div key={index} className="selected-coffee-summary">
+                  <img src={coffee.img} alt={coffee.name} />
+                  <p>{coffee.name}</p>
+                  <p> Sugar: {coffee.sugarAmount} cubes</p>
+                </div>
+              ))}
               <button onClick={handleCloseTotalValue}>Close</button>
             </div>
           </div>

@@ -27,6 +27,10 @@ body {
   height: 9.6rem;
 }
 
+.header-link {
+  background-color: #fdf2e9;
+}
+
 .nav-list {
   display: flex;
   gap: 4.2rem;
@@ -36,6 +40,7 @@ body {
 .nav-link:link,
 .nav-link:visited {
   color: #333;
+
   font-size: 1.8rem;
   font-weight: 600;
   text-decoration: none;
@@ -222,6 +227,8 @@ body {
   justify-content: center;
   gap: 2rem;
   margin-bottom: 2rem;
+
+  position: relative;
 }
 .coffee-item img {
   width: 15rem;
@@ -303,7 +310,15 @@ body {
 }
 
 .cont {
-  max-width: 1400px;
+  /* max-width: 1400px; */
   width: 100%;
   margin: 0 auto;
+}
+
+.add-cup {
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin: 2rem;
+  border-radius: 7px;
 }

@@ -1,13 +1,6 @@
 import React from "react";
-import { useNavigate } from "react-router-dom";
 
 function Menu() {
-  const navigate = useNavigate();
-
-  const handleButtonClick = () => {
-    navigate("/Coffee");
-  };
-
   return (
     <section className="section">
       <div className="container">
@@ -66,8 +59,6 @@ function Menu() {
           <img className="step-img" src="./img/Latte.jpg" alt="Latte" />
         </div>
       </div>
-
-      <button onClick={handleButtonClick}>Choose Your Coffee</button>
     </section>
   );
 }
